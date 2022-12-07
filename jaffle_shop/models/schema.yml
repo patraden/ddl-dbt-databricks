@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: customer_orders_count
+    description: "dbt tutorial model"
+    columns:
+      - name: first_name
+        description: "customer first name"
+        tests:
+          - not_null
+      - name: last_name
+        description: "customer last name"
+        tests:
+          - not_null
+      - name: qty
+        description: "qty customer orders per customer"
+  - name: customer_orders_total_count
+    description: "dbt tutorial model dependant"
+    columns:
+      - name: qty
+        description: "qty of all customer orders"
