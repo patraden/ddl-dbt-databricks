@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/dbt-tutorial.iml" filepath="$PROJECT_DIR$/.idea/dbt-tutorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ddl-dbt-databricks.iml" filepath="$PROJECT_DIR$/.idea/ddl-dbt-databricks.iml" />
     </modules>
   </component>
 </project>
