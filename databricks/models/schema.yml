@@ -1,0 +1,16 @@
+
+version: 2
+
+models:
+  - name: emarsys_eu_change_contact_msg_per_day
+    description: "emarsys eu change_contact message per day"
+    columns:
+      - name: dt
+        description: "date"
+        tests:
+          - unique
+          - not_null
+      - name: qty
+        description: "message count"
+  - name: emarsys_eu_change_contact_msg_hashes
+    description: "emarsys eu change_contact message with hashes"

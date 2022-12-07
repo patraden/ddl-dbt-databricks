@@ -25,12 +25,12 @@ RUN pip install -r requirements.txt
 # Copy dbt profile
 COPY profiles.yml /root/.dbt/profiles.yml
 
-# Copy source code
-COPY . /app
+# Copy databricks project
+COPY databricks /app
 
 # Run debug to validate the connectivity
 
 EXPOSE 8080
 
 WORKDIR /app/databricks
-CMD ["/bin/bash", "-c", "dbt debug;dbt docs generate;dbt docs serve"]
+CMD ["/bin/bash", "-c", "dbt debug; dbt docs generate; dbt docs serve"]
