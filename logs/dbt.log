@@ -57,3 +57,59 @@ Happy modeling!
 [0m12:17:30.000451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108953ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108953f40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108953b20>]}
 [0m12:17:30.001113 [debug] [MainThread]: Flushing usage events
 [0m12:17:30.555012 [debug] [MainThread]: Connection 'debug' was properly closed.
+
+
+============================== 2022-12-06 17:44:26.347163 | d7b8cc4f-3306-4bd3-b625-462ae5dd464b ==============================
+[0m17:44:26.347169 [info ] [MainThread]: Running with dbt=1.3.1
+[0m17:44:26.347513 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/patraden/.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'my_dbt_demo', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m17:44:26.347580 [debug] [MainThread]: Tracking: tracking
+[0m17:44:26.353476 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106046430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1060463a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106046580>]}
+[0m17:44:26.354656 [debug] [MainThread]: Starter project path: /Users/patraden/PycharmProjects/homework/venv/lib/python3.8/site-packages/dbt/include/starter_project
+[0m17:44:30.216906 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10602cf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106038fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1060382b0>]}
+[0m17:44:30.217666 [debug] [MainThread]: Flushing usage events
+[0m17:44:30.779376 [error] [MainThread]: Encountered an error:
+
+[0m17:44:30.782962 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/patraden/PycharmProjects/homework/venv/lib/python3.8/site-packages/dbt/main.py", line 135, in main
+    results, succeeded = handle_and_check(args)
+  File "/Users/patraden/PycharmProjects/homework/venv/lib/python3.8/site-packages/dbt/main.py", line 198, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Users/patraden/PycharmProjects/homework/venv/lib/python3.8/site-packages/dbt/main.py", line 245, in run_from_args
+    results = task.run()
+  File "/Users/patraden/PycharmProjects/homework/venv/lib/python3.8/site-packages/dbt/task/init.py", line 331, in run
+    adapter = self.ask_for_adapter_choice()
+  File "/Users/patraden/PycharmProjects/homework/venv/lib/python3.8/site-packages/dbt/task/init.py", line 257, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "/Users/patraden/PycharmProjects/homework/venv/lib/python3.8/site-packages/click/termui.py", line 166, in prompt
+    value = prompt_func(prompt)
+  File "/Users/patraden/PycharmProjects/homework/venv/lib/python3.8/site-packages/click/termui.py", line 149, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+
+
+============================== 2022-12-06 17:48:54.918769 | 05476e8a-0d25-4c0a-8245-de641446b328 ==============================
+[0m17:48:54.918775 [info ] [MainThread]: Running with dbt=1.3.1
+[0m17:48:54.919311 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/patraden/.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'databricks-dbt-demo', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+[0m17:48:54.919376 [debug] [MainThread]: Tracking: tracking
+[0m17:48:54.923569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f72310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f72730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f724c0>]}
+[0m17:49:11.022369 [debug] [MainThread]: Starter project path: /Users/patraden/PycharmProjects/homework/venv/lib/python3.8/site-packages/dbt/include/starter_project
+[0m17:50:50.242927 [info ] [MainThread]: Profile databricks_dbt_demo written to /Users/patraden/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m17:50:50.244363 [info ] [MainThread]: 
+Your new dbt project "databricks_dbt_demo" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:50:50.244730 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f72b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f72370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f726a0>]}
+[0m17:50:50.245008 [debug] [MainThread]: Flushing usage events
