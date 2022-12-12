@@ -1,7 +1,20 @@
-
 version: 2
 
+sources:
+  - name: sandbox
+    description: BQ fbscom-5fb80:analytics_158994318.events_* tables
+    tables:
+      - name: events__bq_fbscom_5fb80__analytics_158994318__events
+#        columns:
+#          - name: id
+#            description: Primary key of the table
+#            tests:
+#              - unique
+#              - not_null
+
 models:
+  - name: dwh_ga_events
+    description: "biq query table test"
   - name: emarsys_eu_change_contact_msg_per_day
     description: "emarsys eu change_contact message per day"
     columns:
