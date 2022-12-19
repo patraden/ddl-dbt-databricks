@@ -16,6 +16,10 @@ docker run -d -p 8080:8080 ddl-databricks-dbt:latest
    2. Updates for big chunks on PK
    3. Can we implement custom schema for model updates (increment)
 3. Airflow should detect long-running sql queries to postgres
+4. mt5.*deals.timestamp
+4. mt5.*users.timestamp/timestamptrade
+5. mt4.*trades.timestamp
+5. mt4.*users.timestamp
 
 ### some facts from study:
 1. DBT doesn't have an execution engine, so you can not use it to move data from one source to another as it isn't processing data itself
@@ -30,4 +34,7 @@ you’ll want to treat it like an update and add a soft-delete flag, which is th
 [databricks acid](https://docs.databricks.com/lakehouse/acid.html)
 [databricks set isolation](https://docs.databricks.com/optimizations/isolation-level.html#setting-isolation-level)
 
-fbs_staging_area/fbscom-5fb80__analytics_158994318__events
+### problems faces:
+1. long-running catalog list in staging due to: "show table extended in staging like '*'"
+   [discussion](https://github.com/dbt-labs/dbt-spark/issues/93), [workaround](https://github.com/dbt-labs/dbt-spark/issues/228)
+

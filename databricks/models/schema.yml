@@ -1,29 +1,76 @@
 version: 2
 
 sources:
-  - name: sandbox
-    description: BQ fbscom-5fb80:analytics_158994318.events_* tables
+  - name: dw
+    description: dw temporary tables or external tables in gcs
     tables:
-      - name: events__bq_fbscom_5fb80__analytics_158994318__events
-#        columns:
-#          - name: id
-#            description: Primary key of the table
-#            tests:
-#              - unique
-#              - not_null
+      - name: deals__pg_230__fbs_mt4_real1__mt4_users
+#      - name: deals__pg_230__asic_mt5_demo_1__mt5_deals
+#      - name: deals__pg_230__asic_mt5_real_1__mt5_deals
+      - name: deals__pg_230__fbs_b100_real_1__mt5_deals
+      - name: deals__pg_230__fbs_levelup_real_1__mt5_deals
+      - name: deals__pg_230__fbs_levelup_real_2__mt5_deals
+      - name: deals__pg_230__fbs_mt5_demo_1__mt5_deals
+      - name: deals__pg_230__fbs_mt5_real_1__mt5_deals
+      - name: deals__pg_230__fbs_mt5_real_2__mt5_deals
+      - name: deals__pg_230__fbs_mt5_real_cry_1__mt5_deals
+      - name: deals__pg_230__fbs_tp_demo_1__mt5_deals
+      - name: deals__pg_230__fbs_tp_real_1__mt5_deals
+      - name: deals__pg_230__fbs_tp_real_cry_1__mt5_deals
+      - name: deals__pg_230__tradestone_mt5_demo_1__mt5_deals
+      - name: deals__pg_230__tradestone_mt5_real_1__mt5_deals
+      - name: deals__pg_230__tradestone_mt5_real_cry_1__mt5_deals
+      - name: deals__pg_230__tradestone_tp_demo_1__mt5_deals
+      - name: deals__pg_230__tradestone_tp_real_1__mt5_deals
+      - name: deals__pg_230__tradestone_tp_real_cry_1__mt5_deals
+      - name: deals__pg_230__fbs_mt4_real1__mt4_trades
+      - name: deals__pg_230__fbs_mt4_real2__mt4_trades
+      - name: deals__pg_230__fbs_mt4_real3__mt4_trades
+      - name: deals__pg_230__fbs_mt4_real4__mt4_trades
+      - name: deals__pg_230__fbs_mt4_real5__mt4_trades
 
 models:
-  - name: dwh_ga_events
-    description: "biq query table test"
-  - name: emarsys_eu_change_contact_msg_per_day
-    description: "emarsys eu change_contact message per day"
-    columns:
-      - name: dt
-        description: "date"
-        tests:
-          - unique
-          - not_null
-      - name: qty
-        description: "message count"
-  - name: emarsys_eu_change_contact_msg_hashes
-    description: "emarsys eu change_contact message with hashes"
+  - name: deals__pg_230__fbs_mt4_real1__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real1.mt4_users"
+  - name: deals__pg_230__fbs_b100_real_1__mt5_deals
+    description: "dealing replica pg 230, table: fbs_b100_real_1.mt5_deals"
+  - name: deals__pg_230__fbs_levelup_real_1__mt5_deals
+    description: "dealing replica pg 230, table: fbs_levelup_real_1.mt5_deals"
+  - name: deals__pg_230__fbs_levelup_real_2__mt5_deals
+    description: "dealing replica pg 230, table: fbs_levelup_real_2.mt5_deals"
+  - name: deals__pg_230__fbs_mt5_demo_1__mt5_deals
+    description: "dealing replica pg 230, table: fbs_mt5_demo_1.mt5_deals"
+  - name: deals__pg_230__fbs_mt5_real_1__mt5_deals
+    description: "dealing replica pg 230, table: fbs_mt5_real_1.mt5_deals"
+  - name: deals__pg_230__fbs_mt5_real_2__mt5_deals
+    description: "dealing replica pg 230, table: fbs_mt5_real_2.mt5_deals"
+  - name: deals__pg_230__fbs_tp_demo_1__mt5_deals
+    description: "dealing replica pg 230, table: fbs_tp_demo_1.mt5_deals"
+  - name: deals__pg_230__fbs_mt5_real_cry_1__mt5_deals
+    description: "dealing replica pg 230, table: fbs_mt5_real_cry_1.mt5_deals"
+  - name: deals__pg_230__fbs_tp_real_1__mt5_deals
+    description: "dealing replica pg 230, table: fbs_tp_real_1.mt5_deals"
+  - name: deals__pg_230__fbs_tp_real_cry_1__mt5_deals
+    description: "dealing replica pg 230, table: tp_real_cry_1.mt5_deals"
+  - name: deals__pg_230__tradestone_mt5_demo_1__mt5_deals
+    description: "dealing replica pg 230, table: tradestone_mt5_demo_1.mt5_deals"
+  - name: deals__pg_230__tradestone_mt5_real_1__mt5_deals
+    description: "dealing replica pg 230, table: tradestone_mt5_real_1.mt5_deals"
+  - name: deals__pg_230__tradestone_mt5_real_cry_1__mt5_deals
+    description: "dealing replica pg 230, table: tradestone_mt5_real_cry_1.mt5_deals"
+  - name: deals__pg_230__tradestone_tp_demo_1__mt5_deals
+    description: "dealing replica pg 230, table: tradestone_tp_demo_1.mt5_deals"
+  - name: deals__pg_230__tradestone_tp_real_1__mt5_deals
+    description: "dealing replica pg 230, table: tradestone_tp_real_1.mt5_deals"
+  - name: deals__pg_230__tradestone_tp_real_cry_1__mt5_deals
+    description: "dealing replica pg 230, table: tradestone_tp_real_cry_1.mt5_deals"
+  - name: deals__pg_230__fbs_mt4_real1__mt4_trades
+    description: "dealing replica pg 230, table: fbs_mt4_real1.mt4_trades"
+  - name: deals__pg_230__fbs_mt4_real2__mt4_trades
+    description: "dealing replica pg 230, table: fbs_mt4_real2.mt4_trades"
+  - name: deals__pg_230__fbs_mt4_real3__mt4_trades
+    description: "dealing replica pg 230, table: fbs_mt4_real3.mt4_trades"
+  - name: deals__pg_230__fbs_mt4_real4__mt4_trades
+    description: "dealing replica pg 230, table: fbs_mt4_real4.mt4_trades"
+  - name: deals__pg_230__fbs_mt4_real5__mt4_trades
+    description: "dealing replica pg 230, table: fbs_mt4_real5.mt4_trades"
