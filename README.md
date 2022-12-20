@@ -2,7 +2,7 @@
 
 ### image build
 ```bash
-docker build --no-cache -t ddl-databricks-dbt:latest -f dbt.Dockerfile .
+docker build --no-cache -t ddl-databricks-dbt:latest --build-arg PROFILES_FILE=${PROFILES} -f dbt.Dockerfile .
 ```
 ### run image
 ```bash
