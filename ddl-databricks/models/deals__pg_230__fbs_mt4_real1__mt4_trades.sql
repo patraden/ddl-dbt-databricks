@@ -1,5 +1,5 @@
 {{ config(
-        pre_hook="CREATE TABLE if not exists dw.deals__pg_230__fbs_mt4_real1__mt4_trades USING parquet LOCATION 'gs://staging-databricks-test/pg_230__deals/fbs_mt4_real1__mt4_trades'",
+        pre_hook="CREATE TABLE if not exists dw.deals__pg_230__fbs_mt4_real1__mt4_trades USING parquet LOCATION 'gs://staging-databricks-prod/pg_230__deals/fbs_mt4_real1__mt4_trades/'",
         materialized='incremental',
         incremental_strategy='merge',
         file_format='delta',
