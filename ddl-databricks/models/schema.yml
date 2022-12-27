@@ -53,6 +53,10 @@ sources:
       - name: deals__pg_230__tradestone_mt4_real1__mt4_trades
       - name: deals__pg_230__tradestone_mt4_demo1__mt4_trades
       - name: deals__pg_230__fbs_mt4_bonus1__mt4_trades
+      - name: deals__pg_230__asic_mt4_real1__mt4_trades
+      - name: deals__pg_230__asic_mt4_demo1__mt4_trades
+      - name: deals__pg_230__finex_mt4_demo1__mt4_trades
+      - name: deals__pg_230__finex_mt4_real1__mt4_trades
 
 models:
   - name: deals__pg_230__fbs_mt4_real1__mt4_users
@@ -81,7 +85,6 @@ models:
     description: "dealing replica pg 230, table: fbs_mt4_real12.mt4_users"
   - name: deals__pg_230__fbs_mt4_real13__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real13.mt4_users"
-
   - name: deals__pg_230__fbs_b100_real_1__mt5_deals
     description: "dealing replica pg 230, table: fbs_b100_real_1.mt5_deals"
   - name: deals__pg_230__fbs_levelup_real_1__mt5_deals
@@ -114,7 +117,6 @@ models:
     description: "dealing replica pg 230, table: tradestone_tp_real_1.mt5_deals"
   - name: deals__pg_230__tradestone_tp_real_cry_1__mt5_deals
     description: "dealing replica pg 230, table: tradestone_tp_real_cry_1.mt5_deals"
-
   - name: deals__pg_230__fbs_mt4_real1__mt4_trades
     description: "dealing replica pg 230, table: fbs_mt4_real1.mt4_trades"
   - name: deals__pg_230__fbs_mt4_real2__mt4_trades
@@ -151,3 +153,11 @@ models:
     description: "dealing replica pg 230, table: tradestone_mt4_demo1.mt4_trades"
   - name: deals__pg_230__fbs_mt4_bonus1__mt4_trades
     description: "dealing replica pg 230, table: fbs_mt4_bonus1.mt4_trades"
+  - name: deals__pg_230__asic_mt4_real1__mt4_trades
+    description: "dealing replica pg 230, table: asic_mt4_real1.mt4_trades"
+  - name: deals__pg_230__asic_mt4_demo1__mt4_trades
+    description: "dealing replica pg 230, table: asic_mt4_demo1.mt4_trades"
+  - name: deals__pg_230__finex_mt4_demo1__mt4_trades
+    description: "dealing replica pg 230, table: finex_mt4_demo1.mt4_trades"
+  - name: deals__pg_230__finex_mt4_real1__mt4_trades
+    description: "dealing replica pg 230, table: finex_mt4_real1.mt4_trades"

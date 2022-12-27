@@ -1,5 +1,5 @@
 {{ config(
-        pre_hook="CREATE TABLE if not exists dw.deals__pg_230__fbs_mt4_real8__mt4_trades USING parquet LOCATION 'gs://staging-databricks-prod/pg_230__deals/fbs_mt4_real8__mt4_trades/'",
+        pre_hook="CREATE TABLE if not exists dw.deals__pg_230__finex_mt4_real1__mt4_trades USING parquet LOCATION 'gs://staging-databricks-prod/pg_230__deals/finex_mt4_real1__mt4_trades/'",
         materialized='incremental',
         incremental_strategy='merge',
         file_format='delta',
@@ -54,8 +54,9 @@ select
   cast(commission_usd as decimal(38,18)) commission_usd,
   cast(swaps_usd as decimal(38,18)) swaps_usd,
   cast(balance_type as int) balance_type
-from {{ source('dw', 'deals__pg_230__fbs_mt4_real8__mt4_trades') }}
+from {{ source('dw', 'deals__pg_230__finex_mt4_real1__mt4_trades') }}
 {% if is_incremental() %}
-    where 1 = 1
+  -- this filter will only be applied on an incremental run, modified
+  where 1 = 1
 {% endif %}
 

@@ -1,5 +1,5 @@
 {{ config(
-        pre_hook="CREATE TABLE if not exists dw.deals__pg_230__fbs_mt4_demo1__mt4_trades USING parquet LOCATION 'gs://staging-databricks-test/pg_230__deals/fbs_mt4_demo1__mt4_trades'",
+        pre_hook="CREATE TABLE if not exists dw.deals__pg_230__fbs_mt4_demo1__mt4_trades USING parquet LOCATION 'gs://staging-databricks-prod/pg_230__deals/fbs_mt4_demo1__mt4_trades/'",
         materialized='incremental',
         incremental_strategy='merge',
         file_format='delta',
@@ -12,19 +12,19 @@
 select
   cast(ticket as int) ticket,
   cast(login as int) login,
-  symbol,
+  cast(symbol as string) symbol,
   cast(digits as int) digits,
   cast(cmd as int) cmd,
   cast(volume as int) volume,
-  open_time,
+  cast(open_time as timestamp) as open_time,
   cast(state as int) state,
   cast(open_price as decimal(38,18)) open_price,
   cast(sl as decimal(38,18)) sl,
   cast(tp as decimal(38,18)) tp,
-  close_time,
+  cast(close_time as timestamp) as close_time,
   cast(gw_volume as decimal(38,18)) gw_volume,
-  expiration,
-  cast(reason as integer) reason,
+  cast(expiration as timestamp) as expiration,
+  cast(reason as int) reason,
   cast(conv_rate1 as decimal(38,18)) conv_rate1,
   cast(conv_rate2 as decimal(38,18)) conv_rate2,
   cast(commission as decimal(38,18)) commission,
@@ -34,16 +34,14 @@ select
   cast(profit as decimal(38,18)) profit,
   cast(taxes as decimal(38,18)) taxes,
   cast(magic as int) magic,
-  comment,
+  cast(comment as string) as comment,
   cast(gw_order as int) gw_order,
   cast(gw_open_price as int) gw_open_price,
   cast(gw_close_price as int) gw_close_price,
   cast(margin_rate as decimal(38,18)) margin_rate,
-  timestamp
+  cast(timestamp as timestamp) as timestamp
 from {{ source('dw', 'deals__pg_230__fbs_mt4_demo1__mt4_trades') }}
 {% if is_incremental() %}
-  -- this filter will only be applied on an incremental run
---  where input_file_name() = 'gs://staging-databricks-test/pg_230__deals/fbs_mt4_real5__mt4_trades/part-0-1671097589689.gzip.parquet'
     where 1 = 1
 {% endif %}
 

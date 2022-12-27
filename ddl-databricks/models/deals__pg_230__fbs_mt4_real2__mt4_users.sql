@@ -60,7 +60,7 @@ select
  cast(isarchive as boolean) as isarchive
 from {{ source('dw', 'deals__pg_230__fbs_mt4_real2__mt4_users') }}
 {% if is_incremental() %}
-  -- this filter will only be applied on an incremental run
+  -- this filter will only be applied on an incremental run, modified
   where 1 = 1
 {% endif %}
 
