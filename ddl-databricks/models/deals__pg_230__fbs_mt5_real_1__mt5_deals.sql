@@ -1,7 +1,6 @@
 {{ config(
-        pre_hook="CREATE TABLE if not exists {{ source('dw', 'deals__pg_230__fbs_mt5_real_1__mt5_deals') }} USING parquet LOCATION 'gs://staging-databricks-prod/pg_230__deals/fbs_mt5_real_1__mt5_deals/'",
-    )
-}}
+        pre_hook="CREATE TABLE if not exists {{ source('dw', 'deals__pg_230__fbs_mt5_real_1__mt5_deals') }} USING parquet LOCATION 'gs://staging-databricks-{{ var('env') }}/pg_230__deals/fbs_mt5_real_1__mt5_deals/'",
+    ) }}
 select
  cast(deal as decimal(20,0)) as deal,
  cast(timestamp as long) as timestamp,
