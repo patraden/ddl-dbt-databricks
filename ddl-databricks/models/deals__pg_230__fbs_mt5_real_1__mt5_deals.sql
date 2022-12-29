@@ -1,6 +1,5 @@
 {{ config(
-        pre_hook="CREATE TABLE if not exists {{ source('dw', 'deals__pg_230__fbs_mt5_real_1__mt5_deals') }} USING parquet LOCATION \'{{ var('location') }}\'",
-        post_hook="DROP TABLE IF EXISTS {{ source('dw', 'deals__pg_230__fbs_mt5_real_1__mt5_deals') }}"
+        pre_hook="CREATE TABLE if not exists {{ source('dw', 'deals__pg_230__fbs_mt5_real_1__mt5_deals') }} USING parquet LOCATION 'gs://staging-databricks-prod/pg_230__deals/fbs_mt5_real_1__mt5_deals/'",
     )
 }}
 select
@@ -53,6 +52,6 @@ select
  cast(group as string) as group
 from {{ source('dw', 'deals__pg_230__fbs_mt5_real_1__mt5_deals') }}
 {% if is_incremental() %}
-  where input_file_name() = '{{ var('location') }}{{ var('file_name') }}'
+  where timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
 {% endif %}
 
