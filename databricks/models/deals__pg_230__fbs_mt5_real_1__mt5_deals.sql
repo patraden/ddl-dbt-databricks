@@ -53,4 +53,3 @@ from {{ source('dw', 'deals__pg_230__fbs_mt5_real_1__mt5_deals') }}
 {% if is_incremental() %}
   where timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
 {% endif %}
-
