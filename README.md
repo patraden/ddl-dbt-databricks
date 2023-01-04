@@ -52,6 +52,6 @@ you’ll want to treat it like an update and add a soft-delete flag, which is th
 
 ### docs sevrver start
 ```bash
-nohup dbt docs serve &
+dbt docs generate && nohup dbt docs serve &
 ```
 
