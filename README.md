@@ -50,3 +50,8 @@ you’ll want to treat it like an update and add a soft-delete flag, which is th
 1. long-running catalog list in staging due to: "show table extended in staging like '*'"
    [discussion](https://github.com/dbt-labs/dbt-spark/issues/93), [workaround](https://github.com/dbt-labs/dbt-spark/issues/228)
 
+### docs sevrver start
+```bash
+nohup dbt docs serve &
+```
+

@@ -24,7 +24,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 vars:
-  gcs_bucket_url: "gs://staging-databricks-prod"
+  env: "test"
+  data_interval_start: "data_interval_start"
+  data_interval_end: "data_interval_end"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
