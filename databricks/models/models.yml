@@ -41,6 +41,7 @@ models:
   - name: deals__pg_230__fbs_levelup_real_2__mt5_deals
     description: "dealing replica pg 230, table: fbs_levelup_real_2.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -51,6 +52,7 @@ models:
   - name: deals__pg_230__fbs_mt5_demo_1__mt5_deals
     description: "dealing replica pg 230, table: fbs_mt5_demo_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -61,6 +63,7 @@ models:
   - name: deals__pg_230__fbs_levelup_real_1__mt5_deals
     description: "dealing replica pg 230, table: fbs_levelup_real_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -71,6 +74,7 @@ models:
   - name: deals__pg_230__fbs_mt5_real_1__mt5_deals
     description: "dealing replica pg 230, table: fbs_mt5_real_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -81,6 +85,7 @@ models:
   - name: deals__pg_230__fbs_mt5_real_2__mt5_deals
     description: "dealing replica pg 230, table: fbs_mt5_real_2.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -91,6 +96,7 @@ models:
   - name: deals__pg_230__fbs_tp_demo_1__mt5_deals
     description: "dealing replica pg 230, table: fbs_tp_demo_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -101,6 +107,7 @@ models:
   - name: deals__pg_230__fbs_mt5_real_cry_1__mt5_deals
     description: "dealing replica pg 230, table: fbs_mt5_real_cry_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -111,6 +118,7 @@ models:
   - name: deals__pg_230__fbs_tp_real_1__mt5_deals
     description: "dealing replica pg 230, table: fbs_tp_real_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -121,6 +129,7 @@ models:
   - name: deals__pg_230__fbs_tp_real_cry_1__mt5_deals
     description: "dealing replica pg 230, table: tp_real_cry_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -131,6 +140,7 @@ models:
   - name: deals__pg_230__tradestone_mt5_demo_1__mt5_deals
     description: "dealing replica pg 230, table: tradestone_mt5_demo_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -141,6 +151,7 @@ models:
   - name: deals__pg_230__tradestone_mt5_real_1__mt5_deals
     description: "dealing replica pg 230, table: tradestone_mt5_real_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -161,6 +172,7 @@ models:
   - name: deals__pg_230__tradestone_tp_demo_1__mt5_deals
     description: "dealing replica pg 230, table: tradestone_tp_demo_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -171,6 +183,7 @@ models:
   - name: deals__pg_230__tradestone_tp_real_1__mt5_deals
     description: "dealing replica pg 230, table: tradestone_tp_real_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -181,6 +194,7 @@ models:
   - name: deals__pg_230__tradestone_tp_real_cry_1__mt5_deals
     description: "dealing replica pg 230, table: tradestone_tp_real_cry_1.mt5_deals"
     config:
+      tags: ['pg_230_deals']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
