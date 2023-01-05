@@ -1,6 +1,13 @@
 {{ config(
         pre_hook="CREATE TABLE if not exists {{ source('dw', 'deals__pg_230__fbs_b100_real_1__mt5_deals') }} USING parquet LOCATION 'gs://staging-databricks-{{ var('env') }}/pg_230__deals/fbs_b100_real_1__mt5_deals/'",
     ) }}
+with src as
+(
+select
+ *,
+ row_number() over (partition by deal order by timestamp desc) rn
+from {{ source('dw', 'deals__pg_230__fbs_b100_real_1__mt5_deals') }}
+)
 select
  cast(deal as decimal(20,0)) as deal,
  cast(timestamp as long) as timestamp,
@@ -41,9 +48,9 @@ select
  cast(volume as decimal(20,0)) as volume,
  cast(volumeclosed as decimal(20,0)) as volumeclosed,
  cast(apidata as string) as apidata,
- cast(fee as double) as fee,
-from {{ source('dw', 'deals__pg_230__fbs_b100_real_1__mt5_deals') }}
+ cast(fee as double) as fee
+from src
 {% if is_incremental() %}
-  where timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
+  where rn = 1 and timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
 {% endif %}
 

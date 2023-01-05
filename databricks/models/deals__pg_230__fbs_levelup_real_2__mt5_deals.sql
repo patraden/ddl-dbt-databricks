@@ -1,7 +1,13 @@
--- deals__pg_230__fbs_levelup_real_2__mt5_deals
 {{ config(
         pre_hook="CREATE TABLE if not exists {{ source('dw', 'deals__pg_230__fbs_levelup_real_2__mt5_deals') }} USING parquet LOCATION 'gs://staging-databricks-{{ var('env') }}/pg_230__deals/fbs_levelup_real_2__mt5_deals/'",
     ) }}
+with src as
+(
+select
+ *,
+ row_number() over (partition by deal order by timestamp desc) rn
+from {{ source('dw', 'deals__pg_230__fbs_levelup_real_2__mt5_deals') }}
+)
 select
  cast(deal as decimal(20,0)) as deal,
  cast(timestamp as long) as timestamp,
@@ -50,7 +56,7 @@ select
  cast(status as string) as status,
  cast(id as string) as id,
  cast(group as string) as group
-from {{ source('dw', 'deals__pg_230__fbs_levelup_real_2__mt5_deals') }}
+from src
 {% if is_incremental() %}
-  where timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
+  where rn = 1 and timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
 {% endif %}
