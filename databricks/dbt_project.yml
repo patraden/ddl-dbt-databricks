@@ -34,5 +34,11 @@ vars:
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
-models:
-  databricks:
+
+#models:
+#  staging:
+#    pg_230:
+#      deals:
+#        config:
+
+

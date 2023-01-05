@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: dw
+    description: dw temporary tables or external tables in gcs
+    tables:
+      - name: deals__pg_230__fbs_b100_real_1__mt5_deals
+      - name: deals__pg_230__fbs_levelup_real_1__mt5_deals
+      - name: deals__pg_230__fbs_levelup_real_2__mt5_deals
+      - name: deals__pg_230__fbs_mt5_demo_1__mt5_deals
+      - name: deals__pg_230__fbs_mt5_real_1__mt5_deals
+      - name: deals__pg_230__fbs_mt5_real_2__mt5_deals
+      - name: deals__pg_230__fbs_mt5_real_cry_1__mt5_deals
+      - name: deals__pg_230__fbs_tp_demo_1__mt5_deals
+      - name: deals__pg_230__fbs_tp_real_1__mt5_deals
+      - name: deals__pg_230__fbs_tp_real_cry_1__mt5_deals
+      - name: deals__pg_230__tradestone_mt5_demo_1__mt5_deals
+      - name: deals__pg_230__tradestone_mt5_real_1__mt5_deals
+      - name: deals__pg_230__tradestone_mt5_real_cry_1__mt5_deals
+      - name: deals__pg_230__tradestone_tp_demo_1__mt5_deals
+      - name: deals__pg_230__tradestone_tp_real_1__mt5_deals
+      - name: deals__pg_230__tradestone_tp_real_cry_1__mt5_deals

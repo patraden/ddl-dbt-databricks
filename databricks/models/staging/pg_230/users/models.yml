@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: deals__pg_230__fbs_mt4_real1__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real1.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real2__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real2.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real3__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real3.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real4__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real4.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real5__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real5.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real6__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real6.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real7__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real7.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real8__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real8.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real9__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real9.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real10__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real10.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real11__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real11.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real12__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real12.mt4_users"
+  - name: deals__pg_230__fbs_mt4_real13__mt4_users
+    description: "dealing replica pg 230, table: fbs_mt4_real13.mt4_users"

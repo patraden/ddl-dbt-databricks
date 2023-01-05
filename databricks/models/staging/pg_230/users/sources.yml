@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: dw
+    description: dw temporary tables or external tables in gcs
+    tables:
+      - name: deals__pg_230__fbs_mt4_real1__mt4_users
+      - name: deals__pg_230__fbs_mt4_real2__mt4_users
+      - name: deals__pg_230__fbs_mt4_real3__mt4_users
+      - name: deals__pg_230__fbs_mt4_real4__mt4_users
+      - name: deals__pg_230__fbs_mt4_real5__mt4_users
+      - name: deals__pg_230__fbs_mt4_real6__mt4_users
+      - name: deals__pg_230__fbs_mt4_real7__mt4_users
+      - name: deals__pg_230__fbs_mt4_real8__mt4_users
+      - name: deals__pg_230__fbs_mt4_real9__mt4_users
+      - name: deals__pg_230__fbs_mt4_real10__mt4_users
+      - name: deals__pg_230__fbs_mt4_real11__mt4_users
+      - name: deals__pg_230__fbs_mt4_real12__mt4_users
+      - name: deals__pg_230__fbs_mt4_real13__mt4_users
