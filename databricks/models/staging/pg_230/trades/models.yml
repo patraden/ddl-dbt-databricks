@@ -180,13 +180,14 @@ models:
   - name: deals__pg_230__tradestone_mt4_demo1__mt4_trades
     description: "dealing replica pg 230, table: tradestone_mt4_demo1.mt4_trades"
     config:
-      tags: ['pg_230_trades']
+#      tags: ['pg_230_trades']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
       on_schema_change: fail
       unique_key: ticket
       schema: staging
+
   - name: deals__pg_230__fbs_mt4_bonus1__mt4_trades
     description: "dealing replica pg 230, table: fbs_mt4_bonus1.mt4_trades"
     config:
@@ -212,7 +213,7 @@ models:
   - name: deals__pg_230__asic_mt4_demo1__mt4_trades
     description: "dealing replica pg 230, table: asic_mt4_demo1.mt4_trades"
     config:
-      tags: ['pg_230_trades']
+#      tags: ['pg_230_trades']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -223,7 +224,7 @@ models:
   - name: deals__pg_230__finex_mt4_demo1__mt4_trades
     description: "dealing replica pg 230, table: finex_mt4_demo1.mt4_trades"
     config:
-      tags: ['pg_230_trades']
+#      tags: ['pg_230_trades']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta

@@ -1,14 +1,13 @@
 {{ config(
-        pre_hook="CREATE TABLE if not exists dw.deals__pg_230__fbs_mt4_real6__mt4_trades USING parquet LOCATION 'gs://staging-databricks-prod/pg_230__deals/fbs_mt4_real6__mt4_trades/'",
-        materialized='incremental',
-        incremental_strategy='merge',
-        file_format='delta',
-        on_schema_change='fail',
-        unique_key=['ticket'],
-        schema='staging'
-    )
-}}
-
+        pre_hook="CREATE TABLE if not exists {{ source('dw', 'deals__pg_230__fbs_mt4_real6__mt4_trades') }} USING parquet LOCATION 'gs://staging-databricks-{{ var('env') }}/pg_230__deals/fbs_mt4_real6__mt4_trades/'",
+    ) }}
+with src as
+(
+select
+ *,
+ row_number() over (partition by ticket order by timestamp desc) rn
+from {{ source('dw', 'deals__pg_230__fbs_mt4_real6__mt4_trades') }}
+)
 select
   cast(ticket as int) ticket,
   cast(login as int) login,
@@ -54,8 +53,8 @@ select
   cast(commission_usd as decimal(38,18)) commission_usd,
   cast(swaps_usd as decimal(38,18)) swaps_usd,
   cast(balance_type as int) balance_type
-from {{ source('dw', 'deals__pg_230__fbs_mt4_real6__mt4_trades') }}
+from src
 {% if is_incremental() %}
-    where 1 = 1
+  where rn = 1 and timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
 {% endif %}
 

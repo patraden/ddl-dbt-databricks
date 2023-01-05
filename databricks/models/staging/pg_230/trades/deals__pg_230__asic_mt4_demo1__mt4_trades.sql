@@ -5,7 +5,7 @@ with src as
 (
 select
  *,
- row_number() over (partition by deal order by timestamp desc) rn
+ row_number() over (partition by ticket order by timestamp desc) rn
 from {{ source('dw', 'deals__pg_230__asic_mt4_demo1__mt4_trades') }}
 )
 select
@@ -57,4 +57,3 @@ from src
 {% if is_incremental() %}
   where rn = 1 and timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
 {% endif %}
-
