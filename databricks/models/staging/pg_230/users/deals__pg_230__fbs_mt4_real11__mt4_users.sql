@@ -1,14 +1,13 @@
 {{ config(
-        pre_hook="CREATE TABLE if not exists dw.deals__pg_230__fbs_mt4_real11__mt4_users USING parquet LOCATION 'gs://staging-databricks-prod/pg_230__deals/fbs_mt4_real11__mt4_users/'",
-        materialized='incremental',
-        incremental_strategy='merge',
-        file_format='delta',
-        on_schema_change='append_new_columns',
-        unique_key=['login'],
-        schema='staging'
-    )
-}}
-
+        pre_hook="CREATE TABLE if not exists {{ source('dw', 'deals__pg_230__fbs_mt4_real11__mt4_users') }} USING parquet LOCATION 'gs://staging-databricks-{{ var('env') }}/pg_230__deals/fbs_mt4_real11__mt4_users/'",
+    ) }}
+with src as
+(
+select
+ *,
+ row_number() over (partition by login order by timestamp desc) rn
+from {{ source('dw', 'deals__pg_230__fbs_mt4_real11__mt4_users') }}
+)
 select
  cast(login as int) as login,
  cast(group as string) as group,
@@ -58,12 +57,8 @@ select
  cast(conv_rates2 as decimal(38,18)) as conv_rates2,
  cast(modify_time as timestamp) as modify_time,
  cast(isarchive as boolean) as isarchive
-from {{ source('dw', 'deals__pg_230__fbs_mt4_real11__mt4_users') }}
+from src
 {% if is_incremental() %}
-  -- this filter will only be applied on an incremental run
---  where input_file_name() = 'gs://staging-databricks-prod/pg_230__deals/fbs_mt4_real11__mt4_users/part-0-1672023624821.gzip.parquet'
---  where input_file_name() = 'gs://staging-databricks-prod/pg_230__deals/fbs_mt4_real11__mt4_users/part-0-1672066855774.gzip.parquet'
---  where input_file_name() = 'gs://staging-databricks-prod/pg_230__deals/fbs_mt4_real11__mt4_users/part-0-1672110096811.gzip.parquet'
---  where input_file_name() = 'gs://staging-databricks-prod/pg_230__deals/fbs_mt4_real11__mt4_users/part-0-1672153264240.gzip.parquet'
+  where rn = 1 and timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
 {% endif %}
 
