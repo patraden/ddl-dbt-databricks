@@ -4,7 +4,7 @@ models:
   - name: deals__pg_230__fbs_levelup_real_1__mt5_users
     description: "dealing replica pg 230, table: fbs_levelup_real_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -15,7 +15,7 @@ models:
   - name: deals__pg_230__fbs_levelup_real_2__mt5_users
     description: "dealing replica pg 230, table: fbs_levelup_real_2.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -26,7 +26,7 @@ models:
   - name: deals__pg_230__fbs_mt5_demo_1__mt5_users
     description: "dealing replica pg 230, table: fbs_mt5_demo_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -37,7 +37,7 @@ models:
   - name: deals__pg_230__fbs_mt5_real_1__mt5_users
     description: "dealing replica pg 230, table: fbs_mt5_real_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -48,7 +48,7 @@ models:
   - name: deals__pg_230__fbs_mt5_real_2__mt5_users
     description: "dealing replica pg 230, table: fbs_mt5_real_2.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -59,7 +59,7 @@ models:
   - name: deals__pg_230__fbs_mt5_real_cry_1__mt5_users
     description: "dealing replica pg 230, table: fbs_mt5_real_cry_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -70,7 +70,7 @@ models:
   - name: deals__pg_230__fbs_tp_demo_1__mt5_users
     description: "dealing replica pg 230, table: fbs_tp_demo_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -81,7 +81,7 @@ models:
   - name: deals__pg_230__fbs_tp_real_1__mt5_users
     description: "dealing replica pg 230, table: fbs_tp_real_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -92,7 +92,7 @@ models:
   - name: deals__pg_230__tradestone_mt5_demo_1__mt5_users
     description: "dealing replica pg 230, table: tradestone_mt5_demo_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -103,7 +103,7 @@ models:
   - name: deals__pg_230__tradestone_mt5_real_1__mt5_users
     description: "dealing replica pg 230, table: tradestone_mt5_real_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -114,7 +114,7 @@ models:
   - name: deals__pg_230__tradestone_tp_demo_1__mt5_users
     description: "dealing replica pg 230, table: tradestone_tp_demo_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -125,7 +125,7 @@ models:
   - name: deals__pg_230__tradestone_tp_real_1__mt5_users
     description: "dealing replica pg 230, table: tradestone_tp_real_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -136,7 +136,7 @@ models:
   - name: deals__pg_230__tradestone_tp_real_cry_1__mt5_users
     description: "dealing replica pg 230, table: tradestone_tp_real_cry_1.mt5_users"
     config:
-      tags: ['pg_230_users', 'mt5']
+      tags: ['pg_230_mt5_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -147,7 +147,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real1__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real1.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -158,7 +158,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real2__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real2.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -169,7 +169,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real3__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real3.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -180,7 +180,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real4__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real4.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -191,7 +191,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real5__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real5.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -202,7 +202,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real6__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real6.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -213,7 +213,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real7__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real7.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -224,7 +224,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real8__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real8.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -235,7 +235,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real9__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real9.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -246,7 +246,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real10__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real10.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -257,7 +257,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real11__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real11.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -268,7 +268,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real12__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real12.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
@@ -279,7 +279,7 @@ models:
   - name: deals__pg_230__fbs_mt4_real13__mt4_users
     description: "dealing replica pg 230, table: fbs_mt4_real13.mt4_users"
     config:
-      tags: ['pg_230_users', 'mt4']
+      tags: ['pg_230_mt4_users']
       materialized: incremental
       incremental_strategy: merge
       file_format: delta
