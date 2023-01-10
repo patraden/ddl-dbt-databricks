@@ -17,7 +17,6 @@ sources:
       - name: deals__pg_230__tradestone_tp_demo_1__mt5_users
       - name: deals__pg_230__tradestone_tp_real_1__mt5_users
       - name: deals__pg_230__tradestone_tp_real_cry_1__mt5_users
-
       - name: deals__pg_230__fbs_mt4_real1__mt4_users
       - name: deals__pg_230__fbs_mt4_real2__mt4_users
       - name: deals__pg_230__fbs_mt4_real3__mt4_users
