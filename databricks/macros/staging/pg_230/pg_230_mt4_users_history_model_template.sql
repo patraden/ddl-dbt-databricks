@@ -1,7 +1,6 @@
 {% macro pg_230_mt4_users_history_model_template(src_schema, src_table, trg_schema, trg_table) %}
 with src as (
 select
- distinct
  cast(login as int) as login,
  cast(group as string) as group,
  cast(password as string) as password,
@@ -50,18 +49,64 @@ select
  cast(conv_rates2 as decimal(38,18)) as conv_rates2,
  cast(modify_time as timestamp) as modify_time,
  cast(isarchive as boolean) as isarchive,
- xxhash64(
-    login, group, password, enable, enable_change_password, enable_read_only, enable_otp,
-    password_investor, password_phone, name, country, city, state, enable_change_pass,
-    enable_readonly, zipcode, address, lead_source, phone, email, comment, id, status,
-    regdate, lastdate, leverage, agent_account, timestamp, last_ip, balance, prevmonthbalance,
-    prevbalance, credit, interestrate, taxes, prevmonthequity, prevequity, otp_secret, send_reports,
-    mqid, user_color, equity, margin, margin_level, margin_free, conv_rates2, modify_time, isarchive
- ) __HASH__
+ xxhash64(cast(login as int), cast(timestamp as timestamp)) __HASH__,
+ current_timestamp() __UPDATE_TS__,
+ row_number() over (partition by xxhash64(cast(login as int), cast(timestamp as timestamp)) order by timestamp desc) __RN__
 from {{ source(src_schema, src_table) }}
 )
-select *, current_timestamp() __UPDATE_TS__
+select
+ login,
+ group,
+ password,
+ enable,
+ enable_change_password,
+ enable_read_only,
+ enable_otp,
+ password_investor,
+ password_phone,
+ name,
+ country,
+ city,
+ state,
+ enable_change_pass,
+ enable_readonly,
+ zipcode,
+ address,
+ lead_source,
+ phone,
+ email,
+ comment,
+ id,
+ status,
+ regdate,
+ lastdate,
+ leverage,
+ agent_account,
+ timestamp,
+ last_ip,
+ balance,
+ prevmonthbalance,
+ prevbalance,
+ credit,
+ interestrate,
+ taxes,
+ prevmonthequity,
+ prevequity,
+ otp_secret,
+ send_reports,
+ mqid,
+ user_color,
+ equity,
+ margin,
+ margin_level,
+ margin_free,
+ conv_rates2,
+ modify_time,
+ isarchive,
+ __HASH__,
+ __UPDATE_TS__
 from src
 left anti join {{ trg_schema }}.{{ trg_table }} trg
  on src.__HASH__ = trg.__HASH__
+where src.__RN__ = 1
 {% endmacro %}

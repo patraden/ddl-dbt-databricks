@@ -17,5 +17,5 @@
     trg_table=trg_table
    ) }}
 {% if is_incremental() %}
- where timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
+ and timestamp between '{{ var('data_interval_start') }}' and '{{ var('data_interval_end') }}'
 {% endif %}

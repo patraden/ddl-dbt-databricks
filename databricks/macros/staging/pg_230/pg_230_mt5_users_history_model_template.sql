@@ -1,7 +1,6 @@
 {% macro pg_230_mt5_users_history_model_template(src_schema, src_table, trg_schema, trg_table) %}
 with src as (
 select
- distinct
  cast(login as decimal(20,0)) as login,
  cast(isarchive as boolean) as isarchive,
  cast(group as string) as group,
@@ -53,19 +52,67 @@ select
  cast(margin as double) as margin,
  cast(marginfree as double) as marginfree,
  cast(marginlevel as double) as marginlevel,
- xxhash64(
-    login, isarchive, group, certserialnumber, rights, registration, lastaccess,
-    lastpasschange, name, company, account, country, language, clientid, city,
-    state, zipcode, address, phone, email, id, status, comment, color, phonepassword,
-    leverage, agent, tradeaccounts, leadcampaign, leadsource, balance, credit,
-    interestrate, commissiondaily, commissionmonthly, balanceprevday, balanceprevmonth,
-    equityprevday, equityprevmonth, mqid, lastip, apidata, firstname, lastname,
-    middlename, timestamp, timestamptrade, equity, margin, marginfree, marginlevel
- ) __HASH__
+ xxhash64(cast(login as int), cast(timestamp as timestamp)) __HASH__,
+ current_timestamp() __UPDATE_TS__,
+ row_number() over (partition by xxhash64(cast(login as int), cast(timestamp as timestamp)) order by timestamp desc) __RN__
 from {{ source(src_schema, src_table) }}
 )
-select *, current_timestamp() __UPDATE_TS__
+select
+ login,
+ isarchive,
+ group,
+ certserialnumber,
+ rights,
+ registration,
+ lastaccess,
+ lastpasschange,
+ name,
+ company,
+ account,
+ country,
+ language,
+ clientid,
+ city,
+ state,
+ zipcode,
+ address,
+ phone,
+ email,
+ id,
+ status,
+ comment,
+ color,
+ phonepassword,
+ leverage,
+ agent,
+ tradeaccounts,
+ leadcampaign,
+ leadsource,
+ balance,
+ credit,
+ interestrate,
+ commissiondaily,
+ commissionmonthly,
+ balanceprevday,
+ balanceprevmonth,
+ equityprevday,
+ equityprevmonth,
+ mqid,
+ lastip,
+ apidata,
+ firstname,
+ lastname,
+ middlename,
+ timestamp,
+ timestamptrade,
+ equity,
+ margin,
+ marginfree,
+ marginlevel,
+ __HASH__,
+ __UPDATE_TS__
 from src
 left anti join {{ trg_schema }}.{{ trg_table }} trg
  on src.__HASH__ = trg.__HASH__
+where src.__RN__ = 1
 {% endmacro %}
