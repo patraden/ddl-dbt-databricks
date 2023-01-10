@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: deposits__pg_230__all_mt4_users_history
+    description: "base view with united mt4_users selection for deposits datamart"
+    config:
+      materialized: view
+      unique_key: ["server", "login", "__FROM__", "__TO__"]
+      schema: dw
+
+  - name: deposits__pg_230__all_mt5_users_history
+    description: "base view with united mt5_users selection for deposits datamart"
+    config:
+      materialized: view
+      unique_key: ["server", "login", "__FROM__", "__TO__"]
+      schema: dw
