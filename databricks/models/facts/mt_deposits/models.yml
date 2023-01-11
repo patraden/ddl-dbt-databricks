@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: mt_deposits
+    description: "deposits datamart"
+    config:
+      materialized: incremental
+      incremental_strategy: merge
+      file_format: delta
+      on_schema_change: ignore
+      unique_key: ["srv", "ticket"]
+      schema: default

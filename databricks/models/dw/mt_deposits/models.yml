@@ -14,3 +14,17 @@ models:
       materialized: view
       unique_key: ["server", "login", "__FROM__", "__TO__"]
       schema: dw
+
+  - name: deposits__pg_230__all_mt4_trades
+    description: "base view with united mt4_trades selection for deposits datamart"
+    config:
+      materialized: view
+      unique_key: ["server", "ticket"]
+      schema: dw
+
+  - name: deposits__pg_230__all_mt5_deals
+    description: "base view with united mt5_deals selection for deposits datamart"
+    config:
+      materialized: view
+      unique_key: ["server", "ticket"]
+      schema: dw
