@@ -1,7 +1,0 @@
-version: 2
-
-models:
-  - name: symbols_mt4
-    description: "A starter dbt model 1"
-  - name: symbols_mt5
-    description: "A starter dbt model 2"
