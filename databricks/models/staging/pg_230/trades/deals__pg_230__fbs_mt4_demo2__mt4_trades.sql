@@ -1,5 +1,5 @@
-{% set src_table = 'deals__pg_230__asic_mt4_demo2__mt4_trades' %}
-{% set dir = 'pg_230__deals/asic_mt4_demo2__mt4_trades/' %}
+{% set src_table = 'deals__pg_230__fbs_mt4_demo2__mt4_trades' %}
+{% set dir = 'pg_230__deals/fbs_mt4_demo2__mt4_trades/' %}
 
 {{ config(
         pre_hook=external_table_create_template(
